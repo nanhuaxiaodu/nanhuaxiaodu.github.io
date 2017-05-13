@@ -1,47 +1,16 @@
 ---
-layout: default
+layout: page
+title:  Past time
+permalink: /pasttime
 ---
+### nanhuaxiaodu
 
-<a class="btn" href= "{{ site.url }}/" >
-  Home
-</a>
-{% if page.image.feature %}
-<div class="post-image-feature">
-  <img class="feature-image" src=
-  {% if page.image.feature contains 'https' or page.image.feature contains 'http' %}
-  "{{ page.image.feature }}"
-  {% else %}
-  "{{ site.url }}/img/{{ page.image.feature }}"
-  {% endif %}
-  alt="{{ page.title }} feature image">
-
-  {% if page.image.credit %}
-  <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
-  {% endif %}
-</div><!-- /.image-wrap -->
-{% endif %}
+> 我的能力就这么多。我若全心工作，则必然忽略生活；我若用心生活，则必然一事无成；我若两者兼顾，又难免平庸
 
 
-<div id="post">
-  <header class="post-header">
-    <h1 title="{{ page.title }}">{{ page.title }}</h1>
-    <span class="post-meta">
-      <span class="post-date">
-        {{ page.date | date: "%-d %b %Y" | upcase }}
-      </span>
-      •
-      {% include read_time.html %}
-    </span>
-
-  </header>
-
-  <article class="post-content">
-    {{ content }}
-  </article>
-</div>
-
+<!--share button-->
 <div class="share-buttons">
-  <h6>Share on: </h6>
+    <h6>Share on: </h6>
   <ul>
     <li>
       <a href="https://twitter.com/intent/tweet?text={{ site.url }}{{ page.url }}" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
@@ -61,7 +30,6 @@ layout: default
   </ul>
 </div><!-- end share-buttons -->
 
-{% if site.owner.disqus-shortname and page.comments == true %}
+<!-- disqus -->
 <div id="disqus_thread"></div>
 {% include disqus.html %}
-{% endif %}

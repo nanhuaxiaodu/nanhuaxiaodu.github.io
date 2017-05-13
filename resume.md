@@ -1,45 +1,14 @@
 ---
-layout: default
+layout: page
+title:  Resume
+permalink: /resume
 ---
 
-<a class="btn" href= "{{ site.url }}/" >
-  Home
-</a>
-{% if page.image.feature %}
-<div class="post-image-feature">
-  <img class="feature-image" src=
-  {% if page.image.feature contains 'https' or page.image.feature contains 'http' %}
-  "{{ page.image.feature }}"
-  {% else %}
-  "{{ site.url }}/img/{{ page.image.feature }}"
-  {% endif %}
-  alt="{{ page.title }} feature image">
+### nanhuaxiaodu
 
-  {% if page.image.credit %}
-  <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
-  {% endif %}
-</div><!-- /.image-wrap -->
-{% endif %}
+An [intermediate](https://www.quora.com/Whats-the-difference-between-a-Junior-Intermediate-Senior-developer) full-stack web developer using Ruby or PHP to write server-side APIs and Javascript to build client-side user interface. Building user-friendly applications is always my design and development objective.
 
-
-<div id="post">
-  <header class="post-header">
-    <h1 title="{{ page.title }}">{{ page.title }}</h1>
-    <span class="post-meta">
-      <span class="post-date">
-        {{ page.date | date: "%-d %b %Y" | upcase }}
-      </span>
-      •
-      {% include read_time.html %}
-    </span>
-
-  </header>
-
-  <article class="post-content">
-    {{ content }}
-  </article>
-</div>
-
+<!--share button-->
 <div class="share-buttons">
   <h6>Share on: </h6>
   <ul>
@@ -61,7 +30,5 @@ layout: default
   </ul>
 </div><!-- end share-buttons -->
 
-{% if site.owner.disqus-shortname and page.comments == true %}
 <div id="disqus_thread"></div>
 {% include disqus.html %}
-{% endif %}
